@@ -13,7 +13,7 @@ namespace Project_LT_Windows_EF6.Model
 		//Primary key ID CHAR(10)
 		[Key]
 		[Column(TypeName = "char")]
-		[StringLength(10, MinimumLength = 10)]
+		[StringLength(10, MinimumLength = 5)]
 		public string Id { get; set; }
 
 		//Field: Name NVARCHAR(50) NOT NULL
@@ -28,20 +28,20 @@ namespace Project_LT_Windows_EF6.Model
 
 		//Field: Description NVARCHAR(50) NOT NULL
 		[Required]
-		[MaxLength(200)]
+		[MaxLength(1000)]
 		public string Description { get; set; }
 
 		//Field: Rating INT NOT NULL
 		[Required]
-		public int Rating { get; set; }
+		public double Rating { get; set; }
 		
-		//Field: Cost REAL NOT NULL
+		//Field: Minutes NOT NULL
 		[Required]
-		public double Cost { get; set; }
+		public int Minutes { get; set; }
 
 		//Field: Poster IMAGE NOT NULL
 		[Required]
-		[Column(TypeName ="varbinary")]
+		[Column(TypeName ="image")]
 		public byte[] Poster { get; set; }
 
 		public Movie()

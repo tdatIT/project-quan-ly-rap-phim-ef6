@@ -20,11 +20,11 @@ namespace Project_LT_Windows_EF6.Model
 
 		//ForeignKey: MovieId CHAR(10)
 		[Column(TypeName = "char")]
-		[StringLength(10, MinimumLength = 10)]
+		[StringLength(10, MinimumLength = 5)]
 		public string MovieId { get; set; }
 
 		//ForeignKey: RoomId INT
-		public string RoomId { get; set; }
+		public int RoomId { get; set; }
 
 		public ScheduledMovie()
 		{

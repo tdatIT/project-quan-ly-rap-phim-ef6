@@ -27,7 +27,7 @@ namespace Project_LT_Windows_EF6.Model
 			//Configures one-to-many (Movie - ScheduledMovie)
 			modelBuilder.Entity<Movie>()
 				.HasMany<ScheduledMovie>(t => t.scheduledMovies)
-				.WithRequired(s => s.movie)
+				.WithOptional(s => s.movie)
 				.HasForeignKey(g => g.MovieId);
 			//Configures one-to-many (Room - ScheduledMovie)
 			modelBuilder.Entity<Room>()
@@ -42,7 +42,7 @@ namespace Project_LT_Windows_EF6.Model
 			//Configures One-to-many (Scheduled - Ticket)
 			modelBuilder.Entity<ScheduledMovie>()
 				.HasMany<Ticket>(t => t.tickets)
-				.WithOptional(s => s.scheduledMovie)
+				.WithRequired(s => s.scheduledMovie)
 				.HasForeignKey(g => g.ScheduledMovideId);
 
 		}
